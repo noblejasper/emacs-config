@@ -16,3 +16,13 @@
 
 ;; 対話置換でマッチした箇所をハイライト
 (setq query-replace-highlight t)
+
+;; 色の設定
+(global-font-lock-mode t)
+(setq-default transient-mark-mode t)
+(require 'font-lock)
+(set-face-bold-p 'modeline nil)
+
+;;; search している単語を highlight する
+(setq search-highlight t)
+

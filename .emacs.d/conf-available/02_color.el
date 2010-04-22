@@ -25,14 +25,3 @@
 ;               '(top . 0)    ; 左上隅 y 座標
                )
               default-frame-alist))
-
-;; 色の設定
-(global-font-lock-mode t)
-(setq-default transient-mark-mode t)
-(require 'font-lock)
-(set-face-bold-p 'modeline nil)
-
-;;; search している単語を highlight する
-(setq search-highlight t)
-;;; replace するときに highlight する
-(setq query-replace-highlight t)
