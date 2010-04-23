@@ -64,7 +64,7 @@
   (setq flymake-err-line-patterns flymake-perl-err-line-patterns)
   (flymake-mode t))
 
-(add-hook 'cperl-mode-hook '(lambda () (flymake-perl-load)))
+;(add-hook 'cperl-mode-hook '(lambda () (flymake-perl-load)))
 
 (defun next-flymake-error ()
   (interactive)

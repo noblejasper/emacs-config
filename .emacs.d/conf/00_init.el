@@ -40,10 +40,10 @@
 (setq make-backup-files nil)
 
 ;; 自動保存したファイルを削除する
-(setq delete-auto-save-files t)
+;; (setq delete-auto-save-files t)
 
 ;; 自動セーブしない
-(setq auto-save-default nil)
+;; (setq auto-save-default nil)
 
 ;; リージョンをC-hで削除
 (delete-selection-mode 1)
@@ -67,8 +67,12 @@
 ;; utf-8優先
 (prefer-coding-system 'utf-8)
 
+;; 物理行単位でスクロール
+;; http://www.bookshelf.jp/soft/meadow_31.html#SEC418
+(load "ce-scroll.el")
+(setq ce-smooth-scroll nil)
 ;; 一行ずつスクロール
-(setq scroll-step 1)
+;; (setq scroll-step 1)
 
 ;; iswitchb & uniquify
 (iswitchb-mode 1)
