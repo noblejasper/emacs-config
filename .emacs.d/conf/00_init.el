@@ -67,6 +67,9 @@
 ;; utf-8優先
 (prefer-coding-system 'utf-8)
 
+;; tamago
+(setq default-input-method 'japanese-egg-anthy)
+
 ;; 物理行単位でスクロール
 ;; http://www.bookshelf.jp/soft/meadow_31.html#SEC418
 (load "ce-scroll.el")
