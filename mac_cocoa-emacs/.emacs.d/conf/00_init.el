@@ -83,15 +83,56 @@
 (iswitchb-mode 1)
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+(setq uniquify-ignore-buffers-re "*[^*]+*")
 
 ;; 縦分割とかでも行を折り返す
 (setq truncate-partial-width-windows nil)
 
 ;; カーソル点滅しないように
-(blink-cursor-mode 0)
+(blink-cursor-mode t)
+(setq blink-cursor-interval 0.15)
 
 ;; アクティブでないバッファではカーソルを出さない
 (setq cursor-in-non-selected-windows nil)
 
 ;; recenf-mode
 (recentf-mode t)
+
+;; 時刻の表示( 曜日 月 日 時間:分 )
+(setq display-time-day-and-date t)
+(setq display-time-24hr-format t)
+(display-time-mode t)
+
+;; ;; ref: WEB+DB PRESS vol.58 p.78
+(setq show-paren-delay 0)
+(setq show-paren-style 'expression)
+;; (set-face-background 'show-paren-match-face nil)
+;; (set-face-underline-p 'show-paren-match-face "red")
+;; (set-face-background 'show-paren-mismatch-face "#ff0000")
+;; (set-face-underline-p 'show-paren-mismatch-face nil)
+
+;;
+;; redo+
+;;   ref:「Emacsテクニックバイブル」 p.123
+;;
+(require 'redo+)
+(global-unset-key [C-M-/])
+(global-set-key [C-M-/] 'redo)
+(setq undo-no-redo t) ; 過去のundoがredoされないようにする
+;; 大量のundoに耐えられるようにする
+(setq undo-limit 600000)
+(setq undo-strong-limit 900000)
+
+;;
+;; sense-region
+;;   ref:「Emacsテクニックバイブル」 p.124
+;;
+;; http://blog.livedoor.jp/k1LoW/archives/65030864.html
+(require 'sense-region)
+(sense-region-on)
+
+;;
+;; migemo
+;;   ref:「Emacsテクニックバイブル」 p.113
+;;
+;; (require 'migemo)

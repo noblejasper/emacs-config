@@ -34,8 +34,8 @@
 ;; http://d.hatena.ne.jp/IMAKADO/20080724/1216882563
 (require 'color-moccur)
 (setq moccur-split-word t)
-(when (require 'migemo nil t)
-  (setq moccur-use-migemo t))
+;; (when (require 'migemo nil t)
+;;   (setq moccur-use-migemo t))
 
 (require 'anything-c-moccur)
 (setq anything-c-moccur-anything-idle-delay 0.2 ;`anything-idle-delay'

@@ -30,7 +30,10 @@
 ; Ctrl+Enter でファイルを開く
 (global-set-key [C-return] 'find-file)
 
-; Ctrl+delete で現在開いてるバッファを消す
+; Ctrl+Meta+Enter で fullscreen
+(global-set-key [C-M-return] 'ns-toggle-fullscreen)
+
+; Ctrl+Meta+delete で現在開いてるバッファを消す
 (global-set-key [C-M-delete]
     '(lambda() (interactive)(kill-buffer (buffer-name))))
 
@@ -49,3 +52,16 @@
 ;; http://hovav.net/elisp/
 (require 'windmove)
 (windmove-default-keybindings)
+
+;; helps
+(global-set-key [f1k] 'describe-key)
+(global-set-key [f1b] 'describe-bindings)
+(global-set-key [f1v] 'describe-variable)
+(global-set-key [f1f] 'describe-function)
+
+;;
+;; sequential-command
+;;   ref:「Emacsテクニックバイブル」 p.76
+;;
+(require 'sequential-command-config)
+(sequential-command-setup-keys)
